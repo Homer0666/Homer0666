@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07090c">
+<meta name="description" content="Homer">
+<title>HOMER</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2307090c'/%3E%3Cpath d='M8 24 L16 6 L24 24' stroke='%23f0a500' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cinzel+Decorative:wght@700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="fx-vignette"></div>
+<div class="fx-scan"></div>
+<div class="fx-noise"></div>
+<div class="fx-blood" id="fxBlood"></div>
+
+<nav class="nav">
+  <div class="nav-brand" id="navBrand">
+    <span class="brand-mark">HT</span>
+    <span class="brand-name">HOMER</span>
+  </div>
+  <div class="nav-tabs" id="navTabs">
+    <button class="tab active" data-tab="home">INICIO</button>
+    <button class="tab" data-tab="tunnel">TÚNEL</button>
+    <button class="tab" data-tab="mecha">MECHA</button>
+    <button class="tab" data-tab="cams">CÁMARAS</button>
+    <button class="tab" data-tab="events">EVENTOS</button>
+    <button class="tab" data-tab="dossier">DOSSIER</button>
+  </div>
+  <div class="nav-clock" id="navClock">00:00:00</div>
+</nav>
+
+<main>
+
+  <!-- ================= INICIO ================= -->
+  <section class="page active" id="page-home">
+    <div class="hero">
+      <div class="hero-fog f1"></div>
+      <div class="hero-fog f2"></div>
+      <div class="hero-lamp"></div>
+      <div class="shadow-figure"></div>
+      <div class="hero-inner">
+        <p class="eyebrow reveal">ARCHIVO OPERATIVO · NIVEL DE ACCESO: NEGRO</p>
+        <h1 class="hero-title reveal">
+          <span class="ht-line ht-glow" data-text="HOMER">HOMER</span>
+        </h1>
+        <p class="hero-sub reveal">LOS TÚNELES RESPONDEN · LA NOCHE NO ACABA</p>
+        <div class="hero-status reveal">
+          <span class="dot live"></span>
+          <span id="heroTicker">SEÑAL ESTABLE · SECTORES ACTIVOS · SIN INTRUSOS</span>
+        </div>
+      </div>
+      <div class="ticker">
+        <div class="ticker-track">
+          <span>SECTOR 03 SELLADO</span><span>·</span>
+          <span>RONDA NOCTURNA EN CURSO</span><span>·</span>
+          <span>MECHA EN LÍNEA</span><span>·</span>
+          <span>RECLUTAMIENTO ABIERTO</span><span>·</span>
+          <span>PROFUNDIDAD −42 M</span><span>·</span>
+          <span>SECTOR 03 SELLADO</span><span>·</span>
+          <span>RONDA NOCTURNA EN CURSO</span><span>·</span>
+          <span>MECHA EN LÍNEA</span><span>·</span>
+          <span>RECLUTAMIENTO ABIERTO</span><span>·</span>
+          <span>PROFUNDIDAD −42 M</span><span>·</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-card reveal">
+        <span class="stat-label">SECUACES CONTRATADOS</span>
+        <span class="stat-num" id="homeHench">135</span>
+        <span class="stat-sub" id="homeHenchSub">CIFRA CONTROLADA</span>
+        <div class="stat-spark"></div>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-label">EN EL TÚNEL AHORA</span>
+        <span class="stat-num amber" id="homeTunnel">0</span>
+        <span class="stat-sub">SIN ESTADO CONOCIDO</span>
+        <div class="stat-spark"></div>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-label">INTEGRIDAD DEL MECHA</span>
+        <span class="stat-num green" id="homeMechaPct">0%</span>
+        <span class="stat-sub" id="homeMechaStatus">OPERATIVO</span>
+        <div class="mini-bar"><div class="mini-fill" id="homeMechaBar"></div></div>
+      </div>
+    </div>
+
+    <div class="strip reveal">
+      <div class="strip-item"><span class="k">UBICACIÓN</span><span class="v">TÚNEL FAURA</span></div>
+      <div class="strip-item"><span class="k">ACTUALIZACIÓN</span><span class="v">CADA 30 MIN</span></div>
+      <div class="strip-item"><span class="k">LEALTAD</span><span class="v">ABSOLUTA</span></div>
+      <div class="strip-item"><span class="k">FRECUENCIA</span><span class="v">88.6 MHZ</span></div>
+    </div>
+  </section>
+
+  <!-- ================= TÚNEL ================= -->
+  <section class="page" id="page-tunnel">
+    <header class="section-head reveal">
+      <div>
+        <p class="eyebrow">CONTROL DE ACCESO</p>
+        <h2 class="glitch" data-text="TÚNEL">TÚNEL</h2>
+      </div>
+      <span class="chip chip-green"><span class="dot live"></span>OPERATIVO</span>
+    </header>
+
+    <div class="tunnel-grid">
+      <div class="radar-wrap reveal">
+        <div class="radar" id="radar">
+          <div class="radar-grid"></div>
+          <div class="radar-cross"></div>
+          <div class="radar-sweep"></div>
+          <div class="radar-center"></div>
+          <div class="radar-blip" id="radarBlip"></div>
+          <span class="r-nsew r-n">N</span>
+          <span class="r-nsew r-s">S</span>
+          <span class="r-nsew r-e">E</span>
+          <span class="r-nsew r-w">O</span>
+        </div>
+        <div class="radar-meta">
+          <span id="radarState">BARRIDO ACTIVO</span>
+          <span>ALCANCE 360°</span>
+        </div>
+        <div class="radar-readout">
+          <div class="rr-item"><span class="k">X</span><span id="coordX">—</span></div>
+          <div class="rr-item"><span class="k">Y</span><span id="coordY">—</span></div>
+          <div class="rr-item"><span class="k">Z</span><span id="coordZ">—</span></div>
+          <div class="rr-item"><span class="k">DIST</span><span id="coordDist">—</span></div>
+          <div class="rr-item hot"><span class="k">RUMBO</span><span id="coordRumbo">—</span></div>
+        </div>
+        <div class="tunel-map">
+          <div class="tm-levels">
+            <span class="tm-lv l0">NIVEL 0</span>
+            <span class="tm-lv l1">NIVEL −1</span>
+            <span class="tm-lv l2">NIVEL −2</span>
+            <span class="tm-lv l3">NIVEL −3</span>
+            <span class="tm-lv l4">NIVEL −4</span>
+            <span class="tm-lv l5">NIVEL −5</span>
+          </div>
+          <div class="tm-secs" id="tmSecs"></div>
+          <span class="tm-dot" id="tmHomer"></span>
+          <span class="tm-axis tma-b" id="tmZone">SIN ZONA</span>
+        </div>
+        <div class="radar-legend">
+          <span><i class="lg red"></i>HOMER</span>
+          <span><i class="lg blue"></i>SECUACES</span>
+          <span>OESTE ← · → ESTE</span>
+        </div>
+      </div>
+
+      <div class="tunnel-side">
+        <div class="big-counter reveal">
+          <span class="stat-label">AHORA EN EL TÚNEL</span>
+          <div class="big-num" id="bigTunnel">0</div>
+          <div class="big-sub"><span class="dot live"></span>CONTEO EN VIVO</div>
+        </div>
+        <div class="big-counter reveal">
+          <span class="stat-label">SECUACES CONTRATADOS</span>
+          <div class="big-num dim" id="bigHench">0</div>
+          <div class="big-sub">PISO 100 · TECHO 200</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="homer-loc panel reveal">
+      <div class="feed-head">
+        <span class="stat-label">UBICACIÓN DE HOMER</span>
+        <span class="dot live"></span>
+      </div>
+      <div class="loc-main">
+        <span class="loc-state" id="homerLoc">EN EL TÚNEL</span>
+        <span class="loc-sub" id="homerLocSub">CONTINUO · SIN EXCEPCIONES</span>
+      </div>
+      <div class="loc-window">
+        <span class="stat-label">VENTANA DE FURGONETA</span>
+        <span class="loc-now">15:00 – 21:00 · 10 MIN · ALEATORIO</span>
+        <span class="loc-cd" id="locCountdown">PRÓXIMA EXCURSIÓN EN --:--:--</span>
+      </div>
+    </div>
+
+    <div class="tlevels panel reveal">
+      <div class="feed-head">
+        <span class="stat-label">MAPEO DEL TÚNEL</span>
+        <span class="tlevel-dot" id="todayLevelTag">NIVEL DE HOY: —</span>
+      </div>
+      <div class="tunel-photo">
+        <div class="photo-mask">
+          <img id="tunelImg" src="tunel.jpg" alt="Túnel Faura" class="photo-src">
+          <div class="photo-label">📍 TÚNEL FAURA</div>
+        </div>
+      </div>
+      <div class="tlevels-list" id="levelsList"></div>
+    </div>
+
+    <div class="moon panel reveal">
+      <div class="feed-head">
+        <span class="stat-label">REUNIÓN CON EL JEFE</span>
+        <span class="moon-emoji" id="moonEmoji">🌕</span>
+      </div>
+      <div class="moon-grid">
+        <div class="moon-item"><span class="stat-label">CONDICIÓN</span><span class="moon-v" id="moonCond">LUNA LLENA</span></div>
+        <div class="moon-item"><span class="stat-label">UBICACIÓN</span><span class="moon-v cyan">NIVEL 0 · APARCAMIENTO DE ENTES</span></div>
+        <div class="moon-item"><span class="stat-label">ESTADO</span><span class="moon-v amber" id="moonState">PROGRAMADA</span></div>
+        <div class="moon-item"><span class="stat-label">ACCESO</span><span class="moon-v" id="moonAcc">SOLO DURANTE LUNA LLENA</span></div>
+      </div>
+    </div>
+
+    <div class="controls panel reveal">
+      <div class="feed-head">
+        <span class="stat-label">ESTADO DE CONTROL</span>
+        <span class="dot live"></span>
+      </div>
+      <div class="switch-row">
+        <div class="switch" id="swGeneral">
+          <span class="sw-name">INTERRUPTOR GENERAL</span>
+          <div class="sw"><i></i></div>
+          <span class="sw-st" id="swGeneralSt">OFF</span>
+        </div>
+        <div class="switch" id="swCam">
+          <span class="sw-name">CÁMARAS</span>
+          <div class="sw"><i></i></div>
+          <span class="sw-st" id="swCamSt">OFF</span>
+        </div>
+        <div class="switch" id="swLuz">
+          <span class="sw-name">ILUMINACIÓN</span>
+          <div class="sw"><i></i></div>
+          <span class="sw-st" id="swLuzSt">OFF</span>
+        </div>
+        <div class="switch" id="swAlarm">
+          <span class="sw-name">ALARMA</span>
+          <div class="sw"><i></i></div>
+          <span class="sw-st" id="swAlarmSt">OFF</span>
+        </div>
+        <div class="switch" id="swAcc">
+          <span class="sw-name">ACCESOS</span>
+          <div class="sw"><i></i></div>
+          <span class="sw-st" id="swAccSt">OFF</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="status-board panel reveal">
+      <div class="board-item">
+        <span class="stat-label">ANIMATRÓNICOS</span>
+        <span class="board-line loyal">LEALES · NINGÚN HACKEO REGISTRADO</span>
+      </div>
+      <div class="board-item">
+        <span class="stat-label">REVELACIONES CONTRA HOMER</span>
+        <span class="board-line" id="revelStatus">EN SILENCIO</span>
+        <span class="board-num">× <span id="revelCount">3</span></span>
+      </div>
+      <div class="board-item">
+        <span class="stat-label">ESCAPES DEL MECHA</span>
+        <span class="board-num">× <span id="escapeCount">5</span></span>
+      </div>
+    </div>
+
+    <div class="audience panel reveal">
+      <div class="feed-head">
+        <span class="stat-label">AUDIENCIA CON HOMER</span>
+        <span class="dot live"></span>
+      </div>
+      <p class="aud-line">ENTRAR AL TÚNEL Y ACUDIR A LA HABITACIÓN DE HOMER.</p>
+      <ul class="aud-list">
+        <li><b>BILLETE PEQUEÑO</b><span>PÁSALO POR EL ESCÁNER · ACCESO PERMANENTE</span></li>
+        <li><b>BILLETE GRANDE</b><span>ACCESO DE UN SOLO USO · HABITACIÓN DE HOMER</span></li>
+      </ul>
+      <div class="aud-guard"><span class="dot live"></span>SALA PROTEGIDA · SECUACES EN GUARDIA</div>
+    </div>
+  </section>
+
+  <!-- ================= MECHA ================= -->
+  <section class="page" id="page-mecha">
+    <header class="section-head reveal">
+      <div>
+        <p class="eyebrow">UNIDAD DE COMBATE</p>
+        <h2 class="glitch" data-text="VIDA DE MI MECHA">VIDA DE MI MECHA</h2>
+      </div>
+      <span class="chip" id="mechaChip"><span class="dot live"></span><span id="mechaChipText">OPERATIVO</span></span>
+    </header>
+
+    <div class="mecha-grid">
+      <div class="core panel reveal">
+        <div class="health-head">
+          <span class="stat-label">INTEGRIDAD</span>
+          <span class="health-pct" id="healthPct">0%</span>
+        </div>
+        <div class="health-bar">
+          <div class="health-fill" id="healthFill"><span class="health-shimmer"></span></div>
+          <div class="health-ticks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="health-meta">
+          <span id="nextUpdate">ACTUALIZACIÓN EN 10:00</span>
+          <span id="mechaMode">MODO: OPERATIVO</span>
+        </div>
+
+        <div class="subbars">
+          <div class="subbar">
+            <div class="subbar-head"><span>ELECTRICIDAD CANALIZADA</span><span id="elecVal">0,00 GV</span></div>
+            <div class="sub-bar"><div class="sub-fill elec" id="elecFill"></div></div>
+            <span class="sub-note">CAPACIDAD MÁXIMA 2,4 GV</span>
+          </div>
+          <div class="subbar">
+            <div class="subbar-head"><span>POTENCIA DE GOLPE</span><span id="powerVal">56,6 T</span></div>
+            <div class="sub-bar"><div class="sub-fill power" id="powerFill"></div></div>
+            <span class="sub-note">MÁXIMA CERTIFICADA</span>
+          </div>
+        </div>
+
+        <div class="power-row">
+          <div class="power-block">
+            <span class="stat-label">FUERZA</span>
+            <span class="power-num" id="strengthVal">0,0 T</span>
+            <span class="power-note">ESCALA CON CARGA</span>
+          </div>
+          <div class="power-block">
+            <span class="stat-label">DESCARGA</span>
+            <span class="power-num cyan" id="dischargeVal">—</span>
+            <span class="power-note" id="shockNote">ELECTROIMÁN LISTO</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="feed panel reveal">
+        <div class="feed-head">
+          <span class="stat-label">REGISTRO EN VIVO</span>
+          <span class="dot live"></span>
+        </div>
+        <ul id="actionFeed"></ul>
+      </div>
+    </div>
+
+    <div class="resist-grid">
+      <div class="resist-card reveal">
+        <svg viewBox="0 0 24 24" class="ricon"><path d="M12 2s6 7 6 12a6 6 0 0 1-12 0c0-5 6-12 6-12z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span class="rname">AGUA</span>
+        <span class="rstat">SELLADO</span>
+      </div>
+      <div class="resist-card reveal">
+        <svg viewBox="0 0 24 24" class="ricon"><path d="M12 3c2 4-3 5-1 9 1-2 3-2 3-5 3 3 4 6 4 9a6 6 0 0 1-12 0c0-4 3-7 6-13z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span class="rname">FUEGO</span>
+        <span class="rstat">AISLADO</span>
+      </div>
+      <div class="resist-card reveal">
+        <svg viewBox="0 0 24 24" class="ricon"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span class="rname">ELECTRICIDAD</span>
+        <span class="rstat">CANALIZA</span>
+      </div>
+      <div class="resist-card reveal">
+        <svg viewBox="0 0 24 24" class="ricon"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="rname">EXPLOSIONES</span>
+        <span class="rstat">AMORTIGUADO</span>
+      </div>
+    </div>
+
+    <div class="interventions panel reveal">
+      <div class="feed-head">
+        <span class="stat-label">INTERVENCIONES</span>
+        <span class="dot live"></span>
+      </div>
+      <div class="inter-grid">
+        <div class="inter-card">
+          <span class="stat-label">ARREGLADO</span>
+          <span class="inter-num" id="interRepaired">14</span>
+          <span class="inter-tag">COMPLETADO</span>
+        </div>
+        <div class="inter-card">
+          <span class="stat-label">RECONSTRUIDO</span>
+          <span class="inter-num" id="interRebuilt">7</span>
+          <span class="inter-tag">COMPLETADO</span>
+        </div>
+        <div class="inter-card">
+          <span class="stat-label">MEJORADO</span>
+          <span class="inter-num" id="interUpgraded">5</span>
+          <span class="inter-tag">COMPLETADO</span>
+        </div>
+        <div class="inter-card inter-total">
+          <span class="stat-label">TOTAL</span>
+          <span class="inter-num" id="interTotal">26</span>
+          <span class="inter-tag">REGISTRO IRREVERSIBLE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CÁMARAS ================= -->
+  <section class="page" id="page-cams">
+    <header class="section-head reveal">
+      <div>
+        <p class="eyebrow">VIGILANCIA EN DIRECTO</p>
+        <h2 class="glitch" data-text="VER CÁMARAS">VER CÁMARAS</h2>
+      </div>
+      <span class="chip chip-red"><span class="dot live"></span>REC</span>
+    </header>
+
+    <div class="cams-grid">
+      <div class="cams-mons">
+        <div class="monitor panel reveal">
+          <div class="mon-head">
+            <span>CAM 01 · TÚNEL FAURA</span>
+            <span class="rec">● REC</span>
+          </div>
+          <div class="mon-screen">
+            <img id="camVideo" src="camara.jpeg" alt="Cámara del túnel" class="cam-photo">
+            <div class="cam-overlay"></div>
+            <div class="cam-scan"></div>
+            <div class="cam-noise"></div>
+            <div class="cam-grain"></div>
+            <div class="cam-time" id="camTime">--/--/---- --:--:--:---</div>
+            <div class="cam-stamp" id="camStamp">SEÑAL ESTABLE</div>
+          </div>
+        </div>
+
+        <div class="monitor panel reveal">
+          <div class="mon-head">
+            <span>CAM 02 · GALERÍA NORTE</span>
+            <span class="rec">● REC</span>
+          </div>
+          <div class="mon-screen">
+            <video id="cam2Video" src="camara2.mp4" loop muted autoplay playsinline></video>
+            <div class="cam-overlay"></div>
+            <div class="cam-scan"></div>
+            <div class="cam-noise"></div>
+            <div class="cam-grain"></div>
+            <div class="cam-time" id="cam2Time">--/--/---- --:--:--:---</div>
+            <div class="cam-stamp cam-stamp-fnaf">♪ RADIO FNAF ENLACE · AUDIO DEL VÍDEO MUDO</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cam-side panel reveal">
+        <div class="feed-head">
+          <span class="stat-label">SONIDO</span>
+          <span class="dot live"></span>
+        </div>
+        <p class="cam-note" id="camNote">LOS SONIDOS NOCTURNOS LLENAN EL TÚNEL</p>
+        <div class="switch switch-block" id="swSound">
+          <span class="sw-name">ACTIVAR SONIDO AMBIENTE</span>
+          <div class="sw"><i></i></div>
+          <span class="sw-st" id="swSoundSt">OFF</span>
+        </div>
+        <div class="switch switch-block" id="swFnaf">
+          <span class="sw-name">RADIO FNAF · TIEMPO REAL</span>
+          <div class="sw"><i></i></div>
+          <span class="sw-st" id="swFnafSt">OFF</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EVENTOS ================= -->
+  <section class="page" id="page-events">
+    <header class="section-head reveal">
+      <div>
+        <p class="eyebrow">CALENDARIO NEGRO</p>
+        <h2 class="glitch" data-text="EVENTOS">EVENTOS</h2>
+      </div>
+      <span class="chip"><span class="dot live"></span>EN VIGOR</span>
+    </header>
+
+    <div class="events-list" id="eventsList"></div>
+
+    <div class="ev-modal" id="evModal" hidden>
+      <div class="ev-modal-box">
+        <button class="ev-modal-close" id="evModalClose" aria-label="Cerrar">✕</button>
+        <div class="ev-modal-eyebrow">EVENTO SELECCIONADO</div>
+        <h3 class="ev-modal-title" id="evModalTitle"></h3>
+        <div class="ev-modal-meta" id="evModalMeta"></div>
+        <div class="ev-modal-body" id="evModalBody"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DOSSIER ================= -->
+  <section class="page" id="page-dossier">
+    <header class="section-head reveal">
+      <div>
+        <p class="eyebrow">FICHA PERSONAL</p>
+        <h2 class="glitch" data-text="HOMER">HOMER</h2>
+      </div>
+      <span class="chip chip-red">AMENAZA EXTREMA</span>
+    </header>
+
+    <div class="dossier-stats">
+      <div class="d-card reveal">
+        <span class="stat-label">ALTURA</span>
+        <span class="d-num">2,23 <i>m</i></span>
+      </div>
+      <div class="d-card reveal">
+        <span class="stat-label">PESO</span>
+        <span class="d-num">252 <i>kg</i></span>
+      </div>
+      <div class="d-card reveal">
+        <span class="stat-label">FUERZA</span>
+        <span class="d-num" id="dTargetForce">250 <i>kg</i></span>
+        <span class="d-sub">ESTIMADA · SEGÚN ENFADO</span>
+      </div>
+    </div>
+
+    <div class="anger panel reveal">
+      <div class="feed-head">
+        <span class="stat-label">NIVEL DE ENFADO · HOMER</span>
+        <span class="dot live"></span>
+      </div>
+      <div class="anger-bar" id="angerBar">
+        <div class="anger-fill" id="angerFill"></div>
+        <div class="anger-ticks"></div>
+        <span class="anger-mask" id="angerMask">MÁSCARA REALISTA</span>
+        <span class="anger-pct" id="angerPct">0%</span>
+        <span class="anger-sym" id="angerSym">⚠</span>
+      </div>
+      <div class="anger-meta">
+        <span class="anger-force"><span class="k">FUERZA ESTIMADA</span><b id="angerForce">250 KG</b></span>
+        <span class="anger-upd">ACTUALIZA CADA 30 SEG</span>
+      </div>
+    </div>
+
+    <div class="atk panel reveal">
+      <div class="feed-head">
+        <span class="stat-label">ATAQUES DE IRA · HOMER</span>
+        <span class="dot warn"></span>
+      </div>
+      <div class="atk-bar" id="atkBar">
+        <div class="atk-fill" id="atkFill"></div>
+        <div class="atk-ticks"></div>
+        <span class="atk-pct" id="atkPct">0%</span>
+        <span class="atk-sym" id="atkSym">⚠</span>
+      </div>
+      <div class="atk-upd">SE CARGA +1 · A VECES +25 EN CASOS RAROS · PUEDE BAJAR</div>
+      <div class="atk-warn" id="atkWarn" hidden>AVISO ROJO: JEFE CON ATAQUE DE IRA ACTIVADO!!! NO ACERCARSE, PELIGRO!!!</div>
+      <div class="atk-warn evac" id="atkEvac" hidden>⚠ EVACUAR EL TÚNEL DE INMEDIATO ⚠</div>
+      <div class="atk-cause" id="atkCause">SIN ATAQUE EN CURSO</div>
+      <div class="atk-load" id="atkLoad" hidden>⚠ SOBRECARGA DE ENFADO ⚠</div>
+    </div>
+
+    <figure class="portrait reveal">
+      <div class="portrait-media">
+        <img id="homerImg" src="homer.jpeg" alt="Homer" class="homer-fallback">
+      </div>
+      <figcaption>HOMER · IDENTIFICACIÓN VISUAL CONFIRMADA</figcaption>
+    </figure>
+
+    <div class="spirit panel reveal">
+      <header class="spirit-head">
+        <div>
+          <p class="eyebrow">EL ESPÍRITU</p>
+          <h3 class="glitch" data-text="VHALROK">VHALROK</h3>
+        </div>
+        <span class="chip"><span class="dot live"></span>ACTIVO</span>
+      </header>
+      <div class="spirit-grid">
+        <div class="s-card">
+          <span class="stat-label">FURGONETAS</span>
+          <span class="s-num">345</span>
+        </div>
+        <div class="s-card">
+          <span class="stat-label">DESTRUIDAS</span>
+          <span class="s-num red">3</span>
+        </div>
+        <div class="s-card">
+          <span class="stat-label">FUERA AHORA</span>
+          <span class="s-num" id="vanOut">0</span>
+        </div>
+        <div class="s-card s-wide">
+          <span class="stat-label">FLOTA</span>
+          <span class="s-num">OPERATIVA</span>
+          <span class="s-tag">RECUPERACIÓN EN CURSO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="cage-banner" id="cageBanner">
+  <span class="cage-text" id="cageText">EN LA JAULA</span>
+</div>
+
+<footer class="footer">
+  <div class="footer-line"></div>
+  <p>web creada por secuaces para <a href="https://www.tiktok.com/@homer0666" target="_blank" rel="noopener noreferrer" id="creditName">Homer0666</a></p>
+  <p class="footer-watch">Homer siempre está viendo</p>
+</footer>
+
+<div class="watcher">
+  <video class="watcher-video" src="ojos.mp4" autoplay loop muted playsinline></video>
+  <svg class="watcher-eye" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="wGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#a31313" stop-opacity=".55"/>
+        <stop offset="55%" stop-color="#5c0a0a" stop-opacity=".22"/>
+        <stop offset="100%" stop-color="#2a0404" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="wSclera" cx="50%" cy="40%" r="65%">
+        <stop offset="0%" stop-color="#f6ead7"/>
+        <stop offset="70%" stop-color="#dcc9b4"/>
+        <stop offset="100%" stop-color="#c4a38f"/>
+      </radialGradient>
+      <radialGradient id="wIris" cx="45%" cy="42%" r="65%">
+        <stop offset="0%" stop-color="#c21c1c"/>
+        <stop offset="45%" stop-color="#7a0b0b"/>
+        <stop offset="80%" stop-color="#3b0505"/>
+        <stop offset="100%" stop-color="#160101"/>
+      </radialGradient>
+      <linearGradient id="wLid" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#140a0a"/>
+        <stop offset="100%" stop-color="#060303"/>
+      </linearGradient>
+    </defs>
+    <g class="eyeShift">
+      <ellipse class="eyeGlow" cx="120" cy="64" rx="104" ry="58" fill="url(#wGlow)"/>
+      <path d="M16 62 Q60 16 120 20 Q180 16 224 62 Q180 108 120 104 Q60 108 16 62 Z" fill="url(#wSclera)"/>
+      <g class="veins" stroke="#a81414" fill="none" stroke-width="2" stroke-linecap="round" opacity=".5">
+        <path d="M30 40 Q50 32 68 44 Q78 52 74 60"/>
+        <path d="M26 72 Q52 76 68 66 Q80 60 86 52"/>
+        <path d="M210 42 Q190 34 172 44 Q164 50 166 58"/>
+        <path d="M214 72 Q188 78 172 68 Q162 62 158 54"/>
+        <path d="M74 26 Q88 30 94 42"/>
+        <path d="M168 26 Q154 30 148 42"/>
+        <path d="M92 96 Q104 100 112 94"/>
+        <path d="M150 96 Q140 100 132 94"/>
+      </g>
+      <g class="pupilGroup">
+        <circle cx="120" cy="64" r="35" fill="url(#wIris)"/>
+        <circle cx="120" cy="64" r="30" fill="none" stroke="#200a0a" stroke-width="2.6" opacity=".65"/>
+        <path d="M96 44 Q120 36 144 46 Q150 64 142 82 Q120 92 100 82 Q92 66 96 44 Z" fill="#300505" opacity=".45"/>
+        <circle class="pupil" cx="120" cy="64" r="13" fill="#000402"/>
+        <circle cx="120" cy="64" r="12.2" fill="#000000"/>
+        <circle cx="108" cy="52" r="6" fill="#fff" opacity=".8"/>
+        <circle cx="136" cy="80" r="2.6" fill="#fff" opacity=".35"/>
+      </g>
+      <path class="lidCover" d="M16 62 Q60 16 120 20 Q180 16 224 62 Q180 108 120 104 Q60 108 16 62 Z" fill="url(#wLid)" stroke="#040202" stroke-width="2"/>
+    </g>
+  </svg>
+</div>
+
+<div class="vmodal" id="videoModal" hidden>
+  <video id="switchVideo" src="interruptor.mp4" loop muted playsinline></video>
+</div>
+
+<div class="vmodal cam-full" id="camFullModal" hidden>
+  <div class="cam-full-head" id="camFullStamp">CAM 01 · TÚNEL FAURA</div>
+  <img id="camFullImg" src="" alt="">
+  <video id="camFullVideo" loop muted playsinline></video>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
