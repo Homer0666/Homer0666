@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <radialGradient id="skin" cx="50%" cy="42%" r="68%">
+      <stop offset="0%" stop-color="#ffe27a"/>
+      <stop offset="60%" stop-color="#f7c84a"/>
+      <stop offset="100%" stop-color="#d99c28"/>
+    </radialGradient>
+    <radialGradient id="headShade" cx="50%" cy="60%" r="75%">
+      <stop offset="0%" stop-color="rgba(0,0,0,0)"/>
+      <stop offset="78%" stop-color="rgba(80,45,0,.16)"/>
+      <stop offset="100%" stop-color="rgba(60,32,0,.32)"/>
+    </radialGradient>
+    <radialGradient id="muzzle" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#fde28e"/>
+      <stop offset="100%" stop-color="#efc04f"/>
+    </radialGradient>
+    <radialGradient id="teethTop" cx="50%" cy="20%" r="80%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d9d2c0"/>
+    </radialGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b5a8a"/>
+      <stop offset="100%" stop-color="#22334d"/>
+    </linearGradient>
+    <radialGradient id="eyeWhite" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#fffdf4"/>
+      <stop offset="100%" stop-color="#cfc9b2"/>
+    </radialGradient>
+    <radialGradient id="iris" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3f8fd6"/>
+      <stop offset="70%" stop-color="#1f5f9c"/>
+      <stop offset="100%" stop-color="#14406e"/>
+    </radialGradient>
+    <filter id="softBlur"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="softBlur2"><feGaussianBlur stdDeviation="12"/></filter>
+    <filter id="vignette"><feComponentTransfer><feFuncA type="table" tableValues="0 .7 1 1 1 1"/></feComponentTransfer></filter>
+  </defs>
+
+  <rect width="800" height="1000" fill="#0a0c10"/>
+
+  <ellipse cx="400" cy="560" rx="430" ry="210" fill="#14161c" filter="url(#softBlur2)"/>
+  <ellipse cx="400" cy="540" rx="330" ry="150" fill="#0c0e13" opacity=".7"/>
+
+  <g>
+    <!-- neck -->
+    <path d="M300 640 Q400 700 500 640 L470 900 Q400 956 330 900 Z" fill="#eec04a"/>
+    <path d="M300 640 Q400 690 500 640 L470 900 Q400 956 330 900 Z" fill="url(#headShade)" opacity=".9"/>
+
+    <!-- shirt -->
+    <path d="M260 680 Q400 830 540 680 L560 760 Q420 940 240 760 Z" fill="url(#shirt)"/>
+    <path d="M258 684 Q400 838 542 684" fill="none" stroke="#1b2840" stroke-width="6"/>
+    <path d="M320 706 Q400 770 480 706" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="26"/>
+    <path d="M300 780 Q400 900 500 780" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="18"/>
+
+    <!-- head base -->
+    <ellipse cx="400" cy="430" rx="225" ry="248" fill="url(#skin)"/>
+    <ellipse cx="400" cy="380" rx="225" ry="210" fill="none" stroke="#cb9020" stroke-width="3" opacity=".5"/>
+    <ellipse cx="400" cy="430" rx="225" ry="248" fill="url(#headShade)"/>
+
+    <!-- back hair (zigzag) -->
+    <path d="M176 340 L188 300 L206 338 L220 296 L240 336 L258 292 L280 332 L302 290 L326 326 L352 286 L380 320 L408 282 L438 318 L466 286 L494 322 L522 292 L548 330 L572 304 L592 344 L600 380 Q600 440 584 470 Q570 420 560 440 Q552 480 540 500 Q520 460 510 480 Q502 520 488 520 Q470 470 458 492 Q442 540 424 540 Q410 480 398 500 Q382 540 366 532 Q352 480 340 496 Q326 520 312 512 Q300 480 290 490 Q280 500 268 492 Q258 460 244 470 Q232 480 218 470 Q208 440 198 428 Z" fill="#e9a61f"/>
+    <path d="M176 340 L188 300 L206 338 L220 296 L240 336 L258 292 L280 332 L302 290 L326 326 L352 286 L380 320 L408 282 L438 318 L466 286 L494 322 L522 292 L548 330 L572 304 L592 344 L600 380 Q600 440 584 470 Q570 420 560 440 Q552 480 540 500 Q520 460 510 480 Q502 520 488 520 Q470 470 458 492 Q442 540 424 540 Q410 480 398 500 Q382 540 366 532 Q352 480 340 496 Q326 520 312 512 Q300 480 290 490 Q280 500 268 492 Q258 460 244 470 Q232 480 218 470 Q208 440 198 428 Z" fill="none" stroke="#c07d12" stroke-width="4"/>
+
+    <!-- head top highlight -->
+    <ellipse cx="356" cy="270" rx="120" ry="34" fill="rgba(255,244,190,.5)"/>
+
+    <!-- eyes -->
+    <ellipse cx="304" cy="392" rx="52" ry="44" fill="url(#eyeWhite)"/>
+    <ellipse cx="496" cy="392" rx="52" ry="44" fill="url(#eyeWhite)"/>
+    <circle cx="316" cy="396" r="13" fill="url(#iris)"/>
+    <circle cx="484" cy="396" r="13" fill="url(#iris)"/>
+    <circle cx="314" cy="392" r="4.6" fill="#0c0c0c"/>
+    <circle cx="487" cy="392" r="4.6" fill="#0c0c0c"/>
+    <circle cx="319" cy="388" r="2.4" fill="#ffffff"/>
+    <circle cx="490" cy="388" r="2.4" fill="#ffffff"/>
+    <path d="M252 388 Q304 368 356 386" fill="none" stroke="#b07218" stroke-width="5" stroke-linecap="round"/>
+    <path d="M444 386 Q496 368 548 388" fill="none" stroke="#b07218" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- muzzle -->
+    <ellipse cx="400" cy="520" rx="138" ry="102" fill="url(#muzzle)"/>
+    <!-- upper teeth -->
+    <path d="M322 500 Q360 470 400 468 Q440 470 478 500 L466 566 Q400 606 334 566 Z" fill="url(#teethTop)"/>
+    <path d="M322 500 Q328 512 344 518 Q362 524 400 525 Q438 524 456 518 Q472 512 478 500" fill="none" stroke="#8a8271" stroke-width="3" opacity=".55"/>
+    <path d="M352 506 L356 556 M400 470 L400 560 M448 506 L444 556" stroke="#bdb49e" stroke-width="3.4" opacity=".8"/>
+    <!-- lower lips -->
+    <path d="M330 566 Q400 600 470 566 Q460 596 400 596 Q342 598 330 566 Z" fill="#e29b4a"/>
+    <path d="M330 566 Q400 610 470 566" fill="none" stroke="#a35f14" stroke-width="4" stroke-linecap="round"/>
+    <!-- 3-day stubble -->
+    <g fill="rgba(150,110,30,.25)">
+      <circle cx="300" cy="524" r="4"/><circle cx="318" cy="550" r="4.6"/><circle cx="340" cy="568" r="4.2"/>
+      <circle cx="360" cy="580" r="4"/><circle cx="500" cy="524" r="4"/><circle cx="482" cy="550" r="4.6"/>
+      <circle cx="460" cy="568" r="4.2"/><circle cx="440" cy="580" r="4"/><circle cx="382" cy="588" r="3.4"/>
+      <circle cx="420" cy="588" r="3.4"/><circle cx="332" cy="568" r="3.6"/><circle cx="468" cy="568" r="3.6"/>
+    </g>
+
+    <!-- nose -->
+    <ellipse cx="400" cy="470" rx="26" ry="24" fill="#e3a629"/>
+    <ellipse cx="400" cy="466" rx="16" ry="13" fill="#f3c14e"/>
+    <circle cx="394" cy="478" r="5" fill="#8f5c10"/>
+    <circle cx="406" cy="478" r="5" fill="#8f5c10"/>
+
+    <!-- ear -->
+    <ellipse cx="592" cy="470" rx="40" ry="56" fill="url(#skin)" stroke="#cb9020" stroke-width="3"/>
+    <ellipse cx="596" cy="472" rx="20" ry="34" fill="#e5a62a"/>
+    <path d="M588 470 L600 470" stroke="#b07218" stroke-width="3" opacity=".6"/>
+    <path d="M592 560 Q600 600 586 622 Q596 598 616 600" fill="#d99c28" stroke="#b07218" stroke-width="3"/>
+
+    <!-- eyebrows -->
+    <path d="M250 348 Q304 322 366 344" fill="none" stroke="#7a4a08" stroke-width="7" stroke-linecap="round"/>
+    <path d="M434 344 Q496 322 550 348" fill="none" stroke="#7a4a08" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <rect width="800" height="1000" fill="url(#vignette)" opacity=".55"/>
+</svg>
