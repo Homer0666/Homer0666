@@ -1,0 +1,25 @@
+[
+  {
+    "id": 7,
+    "titulo": "HABLAR CON SAMUEL Y DENIS",
+    "fecha": "2026-10-03T18:30",
+    "sector": "TUNEL · NIVEL 0",
+    "estado": "PLAN SUPREMO",
+    "info": "Hablar con los mequetrefes sin pegarles ni nada. Cada uno paga 5 euros para las ruedas del mecha.",
+    "objetivos": [
+      "HABLAR CON SAMUEL Y DENIS",
+      "QUE CADA MEQUETREFIE TRAIGA 5 EUROS PARA LAS RUEDAS DEL MECHA",
+      "SI LOS 10 EUROS ESTÁN, LAS RUEDAS SE IMPLEMENTAN Y EL MECHA RODARÁ",
+      "SI NO PAGAN, NO APARECER: ESPIARLES A LO LEJOS Y NO HABLARLES NI PEGARLES",
+      "MARIO SE SACRIFICA SI LOS ANIMATRONICOS TIENEN UNA TACTICA SECRETA PARA DECIRSELA A HOMER"
+    ],
+    "instrucciones": [
+      "Hablar con los MEQUETREFES sin pegarles ni nada: primero se escucha, después se decide",
+      "Que SAMUEL traiga sus 5 euros para las ruedas del mecha",
+      "Que DENIS traiga sus otros 5 euros para las ruedas del mecha",
+      "Si traen los 10 euros, aparecer y hablar con ellos en el túnel nivel 0",
+      "Si no traen nada, no aparecer: espiarles a lo lejos y no hablar con ellos ni pegarles",
+      "Que MARIO se va a sacrificar si los ANIMATRONICOS tienen una táctica secreta, para decírselo a Homer"
+    ]
+  }
+]
