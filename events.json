@@ -1,0 +1,25 @@
+[
+  {
+    "id": 7,
+    "titulo": "HABLAR CON SAMUEL Y DENIS",
+    "fecha": "2026-10-03T18:30",
+    "sector": "TUNEL · NIVEL 0",
+    "estado": "PLAN SUPREMO",
+    "info": "Hablar con los mequetrefes sin pegarles ni nada.",
+    "objetivos": [
+      "HABLAR CON SAMUEL Y DENIS",
+      "QUE UNO TRAIGA EL VAPER COOL VAPS CHERRY SIN NICOTINA Y EL OTRO TRAIGA LOS 10 EUROS",
+      "SI SE CUMPLE, APARECER Y HABLAR CON ELLOS SIN PEGARLES",
+      "SI NO SE CUMPLE, NO APARECER: ESPIARLES A LO LEJOS Y NO HABLARLES NI PEGARLES",
+      "MARIO SE SACRIFICA SI LOS ANIMATRONICOS TIENEN UNA TACTICA SECRETA PARA DECIRSELA A HOMER"
+    ],
+    "instrucciones": [
+      "Hablar con los MEQUETREFES sin pegarles ni nada: primero se escucha, después se decide",
+      "Que uno traiga el Vaper de Cool Vaps sabor Cherry sin nicotina o uno parecido",
+      "Que el otro traiga los 10 euros",
+      "Si traen lo pedido, aparecer y hablar con ellos en el túnel nivel 0",
+      "Si no traen nada, no aparecer: espiarles a lo lejos y no hablar con ellos ni pegarles",
+      "Que MARIO se va a sacrificar si los ANIMATRONICOS tienen una táctica secreta, para decírselo a Homer"
+    ]
+  }
+]
